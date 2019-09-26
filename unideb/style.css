@@ -38,3 +38,14 @@ body .unideb-card .card-body .row{
     font-size: 22px;
     color: #bbbbbb;
 }
+body .unideb-card .card-body .row .card-text{
+    margin-top: 5px;
+    font-size: 16px;
+    font-weight: 300;
+}
+.hide {
+    display: none;
+  }
+  .show {
+    display:block;
+  }
