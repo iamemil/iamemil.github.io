@@ -1,2 +1,21 @@
 /* Style.css file for index.html
 */
+
+body{
+    background-color: #0D184A;
+}
+body h1{
+    color: #DEE5F0;
+}
+body small.custom{
+    color: #939AB0 !important;
+}
+
+body .unideb-card{
+    background-color: #142f83;
+    margin: 10px 0px;
+    height: 120px;
+}
+body .unideb-card .card-body .row{
+    height: 100%;
+}
