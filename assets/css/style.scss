@@ -47,12 +47,11 @@ $accentColor:#E63462;
                 color: $textColor;
             }
             &:hover{
-            color: $focusColor;
-            transition: 0.4s color ease-in-out;
-            b{
-                color: $textColor;
-            }
-            }
+                color: $focusColor;
+                b{
+                    color: $textColor;
+                }
+                }
         }
         .nav-item{
             &:hover{
