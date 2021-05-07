@@ -37,10 +37,8 @@
 }
 
 .mainWrapper nav .navbar-brand {
-  color: white;
+  color: #00ff88;
   display: inline-block;
-  -webkit-transition: 0.4s color ease-in-out;
-  transition: 0.4s color ease-in-out;
 }
 
 .mainWrapper nav .navbar-brand b {

@@ -40,9 +40,8 @@ $accentColor:#E63462;
     }
     nav{
         .navbar-brand{
-            color: $textColor;
+            color: $focusColor;
             display: inline-block;
-            transition: 0.4s color ease-in-out;
             b{
                 color: $textColor;
             }
