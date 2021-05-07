@@ -1,0 +1,90 @@
+$bgcolor: rgba(0, 0, 0, 0.85);
+//$bgcolor:#272838;
+//$bgcolor:#2E2D4D;
+$bgcolor:#262626;
+$secondaryColor: #1d1f21;
+$focusColor: #00ff88;
+$textColor:white;
+$accentColor:#E63462;
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+
+.mainWrapper{
+    font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+    //font-family: 'Montserrat', sans-serif;
+    background-color: $bgcolor;
+    color: $textColor !important;
+    .bg-dark{
+        background-color: $bgcolor !important;
+    }
+    .bg-light{
+        background-color: $secondaryColor !important;
+    }
+    .badge{
+        text-decoration: none;
+        &:hover{
+            color: $textColor;
+        }
+    }
+    .btn-primary,.badge-primary{
+        background-color: $accentColor;
+        border-color: $accentColor;
+    }
+    .badge-success{
+        background-color: $focusColor;
+        border-color: $focusColor;
+        color: black;
+        &:hover{
+            color: black;
+        }
+    }
+    nav{
+        .navbar-brand{
+            color: $textColor;
+            display: inline-block;
+            transition: 0.4s color ease-in-out;
+            b{
+                color: $textColor;
+            }
+            &:hover{
+            color: $focusColor;
+            transition: 0.4s color ease-in-out;
+            b{
+                color: $textColor;
+            }
+            }
+        }
+        .nav-item{
+            &:hover{
+                a.nav-link{
+                    transition: 0.3s color ease-in-out;
+                    &:hover{
+                        color: $focusColor !important;
+                        transition: 0.3s color ease-in-out;
+                    }
+                }
+            }
+        }
+        
+    }
+
+    .section-title{
+        position: relative;
+        //margin-top: 40px;
+        &::after{
+            position: absolute;
+            top: -15px;
+            content: '*';
+            color: $focusColor;
+        }
+    }
+    .section-divider{
+        width: 100%;
+        height: 50px;
+        background-color: $bgcolor;
+    }
+    @import 'sections/services';
+    @import 'sections/portfolio';
+    @import 'sections/timeline';
+    @import 'sections/contact';
+}
