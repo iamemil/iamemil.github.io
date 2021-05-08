@@ -17,7 +17,7 @@ $(document).ready(function () {
   });
 
   const speed = 500;
-  
+
   $('a[href*="#"]')
     .filter((i, a) => a.getAttribute('href').startsWith('#') || a.href.startsWith(`${location.href}#`))
     .unbind('click.smoothScroll')
@@ -31,4 +31,70 @@ $(document).ready(function () {
       }
     });
 
-});
+
+  // Portfolio Carousel
+  if ($("#portfolio-carousel").length) {
+    $("#portfolio-carousel").owlCarousel({
+      loop: true,
+      margin: 0,
+      nav: false,
+      dots: false,
+      smartSpeed: 700,
+      autoplayHoverPause:true,
+      autoplay: 3000,
+      responsive: {
+        0: {
+          items: 1
+        },
+        600: {
+          items: 1
+        },
+        800: {
+          items: 2
+        },
+        1024: {
+          items: 3
+        },
+        1200: {
+          items: 3
+        },
+        1600: {
+          items: 4
+        }
+      }
+    });
+  }
+  // Portfolio Carousel
+  if ($("#services-carousel").length) {
+    $("#services-carousel").owlCarousel({
+      loop: true,
+      margin: 0,
+      nav: false,
+      dots: false,
+      smartSpeed: 700,
+      autoplayHoverPause: true,
+      autoplay: 3000,
+      responsive: {
+        0: {
+          items: 1
+        },
+        600: {
+          items: 1
+        },
+        800: {
+          items: 2
+        },
+        1024: {
+          items: 3
+        },
+        1200: {
+          items: 3
+        },
+        1600: {
+          items: 4
+        }
+      }
+    });
+  }
+
+  });
