@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<title>VL Pass</title>
+
+	<meta name="theme-color" content="#fff">
+	<link rel="stylesheet" type="text/css" href="assets/style.css">
+
+</head>
+
+<body>
+	<div class="wrapper">
+		<div class="logo">
+			<a href="https://instagram.com/vaguelylegal">
+				<img src="logo.png" alt="logo">
+			</a>
+		</div>
+		<div class="content">
+			<div id="qrcode"></div>
+		</div>
+		<input id="url" autocomplete="off" placeholder="enter your unique VisitMe referral link">
+	
+	</div>
+
+	<script type="text/javascript" src="assets/qrcode.min.js"></script>
+	<script type="text/javascript">
+		!function (d, q, $, h) {
+			const def = 'https://emlsm.tech';
+			const gen = function (v) {
+				if(String(v).includes("https://visitme.hu/r/")){
+				d.querySelectorAll('#qrcode>*').forEach(function (e) { e.remove(); });
+				new QRCode($('qrcode'), v || def);
+				}else{
+					d.querySelectorAll('#qrcode>*').forEach(function (e) { e.remove(); });
+				new QRCode($('qrcode'), def);
+				}
+			};
+
+			$('url').addEventListener('keyup', function (ev) {
+				gen(ev.target.value);
+				if(String(ev.target.value).includes("https://visitme.hu/r/")){
+					location.hash = '#text=' + encodeURIComponent(ev.target.value);
+				}
+			});
+
+			if (h.indexOf('#text=') == 0) gen($('url').value = decodeURIComponent(h.substring(6)));
+			else gen(def);
+		}(document, QRCode, function (a) { return document.getElementById(a); }, location.hash);
+
+		if ('serviceWorker' in navigator) window.addEventListener('load', function () { navigator.serviceWorker.register('/sw.js'); });
+	</script>
+</body>
+
+</html>

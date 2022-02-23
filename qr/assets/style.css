@@ -1,0 +1,43 @@
+.content {
+    width: 200px;
+    background: #fff;
+    padding: 30px;
+    margin-top: 20px;
+    margin-bottom: 50px;
+    margin-right: auto;
+    margin-left: auto;
+    border-radius: 20px;
+    box-shadow: rgba(0, 0, 0, 0.57) 0px 5px 8px 0px;
+}
+
+body {
+    background: #000000;
+    margin: 0;
+
+}
+
+#qrcode {
+    height: 200px;
+}
+.logo{
+    display: flex;
+    justify-content: center;
+}
+.logo img{
+    text-align: center;
+    width: 150px;
+}
+input#url {
+    display: block;
+    width: 350px;
+    margin: 0 auto;
+    border: 0;
+    border-bottom: 2px solid #4e4e4e;
+    background: transparent;
+    color: #ccc;
+    text-align: center;
+    outline: 0 !important;
+    padding-bottom: 3px;
+    font-size: 15px;
+    font-family: monospace;
+}
