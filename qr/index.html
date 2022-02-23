@@ -23,7 +23,7 @@
 			<div id="qrcode"></div>
 		</div>
 		<input id="url" autocomplete="off" placeholder="enter your unique VisitMe referral link">
-	
+		<button id="generate" class="btn">Generate Express Pass</button>
 	</div>
 
 	<script type="text/javascript" src="assets/qrcode.min.js"></script>
@@ -40,10 +40,12 @@
 				}
 			};
 
-			$('url').addEventListener('keyup', function (ev) {
-				gen(ev.target.value);
-				if(String(ev.target.value).includes("https://visitme.hu/r/")){
-					location.hash = '#text=' + encodeURIComponent(ev.target.value);
+			document.getElementById('generate').addEventListener('click', function (ev) {
+				gen($('url').value);
+				if(String($('url').value).includes("https://visitme.hu/r/")){
+					location.hash = '#text=' + encodeURIComponent($('url').value);
+				}else{
+					alert('Please enter a valid VisitMe referral link');
 				}
 			});
 
@@ -52,6 +54,7 @@
 		}(document, QRCode, function (a) { return document.getElementById(a); }, location.hash);
 
 		if ('serviceWorker' in navigator) window.addEventListener('load', function () { navigator.serviceWorker.register('/sw.js'); });
+	
 	</script>
 </body>
 

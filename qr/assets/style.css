@@ -15,14 +15,22 @@ body {
     margin: 0;
 
 }
+.wrapper{
+    background: #000000;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 
+}
 #qrcode {
     height: 200px;
 }
 .logo{
     display: flex;
     justify-content: center;
-    margin-top: 100px;
+    margin-top: 60px;
 }
 .logo img{
     text-align: center;
@@ -41,4 +49,21 @@ input#url {
     padding-bottom: 3px;
     font-size: 15px;
     font-family: monospace;
+}
+.btn{
+    text-align: center;
+    background-color: white;
+    width: 200px;
+    height: 50px;
+    border: none;
+    color: black;
+    padding: 5px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-family: "Open Sans", sans-serif;
+    font-size: 15px;
+    font-weight: bold;
+    border-radius: 25px;
+    margin-top: 40px;
 }
