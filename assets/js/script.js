@@ -1,7 +1,7 @@
 $(document).ready(function () {
   // Can also be included with a regular script tag
   var typed = new Typed('.typed', {
-    strings: ["an ASP.NET Developer<span style='color:#00ff88'>.</span>", "a Web Developer<span style='color:#00ff88'>.</span>", "a C# Developer<span style='color:#00ff88'>.</span>"],
+    strings: ["emil<b>ismayilzada</b>", "emlsm<b>.</b>tech"],
     typeSpeed: 70,
     backSpeed: 70,
     backDelay: 2000,
