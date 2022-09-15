@@ -2,9 +2,9 @@ $(document).ready(function () {
   // Can also be included with a regular script tag
   var typed = new Typed('.typed', {
     strings: ["emil<b>ismayilzada</b>", "<b>emlsm</b>.<b>tech</b>"],
-    typeSpeed: 70,
-    backSpeed: 70,
-    backDelay: 2000,
+    typeSpeed: 40,
+    backSpeed: 40,
+    backDelay: 4000,
     loop: true
   });
 
