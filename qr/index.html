@@ -4,7 +4,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<title>VL Express Pass</title>
+	<title>SimpleQR</title>
 
 	<meta name="theme-color" content="#000">
 	<link rel="stylesheet" type="text/css" href="assets/style.css">
@@ -14,11 +14,6 @@
 
 <body>
 	<div class="wrapper">
-		<div class="logo">
-			<a href="https://instagram.com/vaguelylegal">
-				<img src="logo.png" alt="logo">
-			</a>
-		</div>
 		<div class="content">
 			<div id="qrcode"></div>
 		</div>
@@ -42,11 +37,8 @@
 
 			document.getElementById('generate').addEventListener('click', function (ev) {
 				gen($('url').value);
-				if(String($('url').value).includes("https://visitme.hu/r/")){
-					location.hash = '#text=' + encodeURIComponent($('url').value);
-				}else{
-					alert('Please enter a valid VisitMe referral link');
-				}
+				location.hash = '#text=' + encodeURIComponent($('url').value);
+				
 			});
 
 			if (h.indexOf('#text=') == 0) gen($('url').value = decodeURIComponent(h.substring(6)));
