@@ -26,7 +26,7 @@
 		!function (d, q, $, h) {
 			const def = 'https://emlsm.tech';
 			const gen = function (v) {
-				if(String(v).includes("https://visitme.hu/r/")){
+				if(String(v).includes("http")){
 				d.querySelectorAll('#qrcode>*').forEach(function (e) { e.remove(); });
 				new QRCode($('qrcode'), v || def);
 				}else{
