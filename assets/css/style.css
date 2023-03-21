@@ -102,7 +102,7 @@
           box-shadow: 6px 6px 40px rgba(0, 0, 0, 0.4);
 }
 
-.mainWrapper #Services .services-card:hover .tech-stack {
+.mainWrapper #Services .tech-stack {
   color: #E63462;
 }
 
