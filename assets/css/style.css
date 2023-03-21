@@ -102,12 +102,9 @@
           box-shadow: 6px 6px 40px rgba(0, 0, 0, 0.4);
 }
 
-.mainWrapper #Services .tech-stack {
-  color: #E63462;
-}
-
 .mainWrapper #Services .services-card .card-title {
   font-family: 'Lato', sans-serif;
+  color: #E63462;
 }
 
 .mainWrapper #Services .services-card .card-img-top {
