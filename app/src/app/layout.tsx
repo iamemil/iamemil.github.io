@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Emil Ismayilzada | Portfolio",
+  title: "Emil Ismayilzada",
   description:
     "Data Analyst and Software Developer with experience at BMW Group. Specializing in Python, React, ASP.NET, and data analytics.",
   keywords: [
@@ -27,16 +27,16 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "Emil Ismayilzada" }],
   openGraph: {
-    title: "Emil Ismayilzada | Portfolio",
+    title: "Emil Ismayilzada",
     description:
       "Data Analyst and Software Developer with experience at BMW Group.",
-    url: "https://emlsm.tech",
+    url: "https://iamemil.github.io",
     siteName: "Emil Ismayilzada",
     type: "website",
   },
   twitter: {
     card: "summary",
-    title: "Emil Ismayilzada | Portfolio",
+    title: "Emil Ismayilzada",
     description:
       "Data Analyst and Software Developer with experience at BMW Group.",
   },
