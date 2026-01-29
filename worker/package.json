@@ -1,0 +1,17 @@
+{
+  "name": "portfolio-chat-worker",
+  "version": "1.0.0",
+  "description": "Cloudflare Worker for Emil's portfolio chatbot API",
+  "main": "src/index.ts",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "update-resume": "node scripts/extract-resume.js"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20240117.0",
+    "typescript": "^5.3.3",
+    "wrangler": "^3.24.0",
+    "pdfjs-dist": "^4.0.379"
+  }
+}

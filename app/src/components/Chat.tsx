@@ -8,6 +8,9 @@ import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { Send, User, Bot, Loader2 } from "lucide-react";
 import ReactMarkdown from "react-markdown";
 
+// API URL - set via environment variable for Cloudflare Worker
+const API_URL = process.env.NEXT_PUBLIC_CHAT_API_URL || "/api/chat";
+
 interface Message {
   id: string;
   role: "user" | "assistant";
@@ -67,7 +70,7 @@ export function Chat() {
     setIsLoading(true);
 
     try {
-      const response = await fetch("/api/chat", {
+      const response = await fetch(API_URL, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({

@@ -1,0 +1,7 @@
+name = "portfolio-chat-api"
+main = "src/index.ts"
+compatibility_date = "2024-01-01"
+
+# Environment variables (set via `wrangler secret put OPENROUTER_API_KEY`)
+# [vars]
+# OPENROUTER_MODEL = "anthropic/claude-3.5-sonnet"
