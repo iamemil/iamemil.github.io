@@ -84,7 +84,7 @@ export default {
       ];
 
       // Call OpenRouter API
-      const model = env.OPENROUTER_MODEL || 'google/gemini-2.5-flash';
+      const model = env.OPENROUTER_MODEL || 'google/gemini-2.5-flash-lite';
       
       const openRouterResponse = await fetch('https://openrouter.ai/api/v1/chat/completions', {
         method: 'POST',
