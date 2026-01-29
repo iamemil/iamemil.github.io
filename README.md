@@ -59,7 +59,9 @@ This portfolio features a clean, simple design with:
 
 ## Quick Start
 
-### 1. Deploy the Cloudflare Worker (Chat API)
+### 1. Initial Cloudflare Worker Setup (One-time)
+
+First, deploy the worker manually to get your worker URL:
 
 ```bash
 cd worker
@@ -78,6 +80,13 @@ Go to your repository **Settings** → **Secrets and variables** → **Actions**
 | Secret | Value |
 |--------|-------|
 | `CHAT_API_URL` | `https://portfolio-chat-api.YOUR_SUBDOMAIN.workers.dev/api/chat` |
+| `CLOUDFLARE_ACCOUNT_ID` | Your Cloudflare Account ID |
+| `CLOUDFLARE_API_TOKEN` | API Token with "Edit Workers" permission |
+| `OPENROUTER_API_KEY` | Your OpenRouter API key |
+
+**Getting Cloudflare credentials:**
+- **Account ID**: Found in Cloudflare Dashboard sidebar or URL
+- **API Token**: Create at [API Tokens](https://dash.cloudflare.com/profile/api-tokens) using "Edit Cloudflare Workers" template
 
 ### 3. Enable GitHub Pages
 
@@ -86,18 +95,37 @@ Go to **Settings** → **Pages** and set:
 
 ### 4. Push to Deploy
 
-Push to `main` branch and GitHub Actions will automatically build and deploy.
+- **Frontend only**: Just push to `main` - GitHub Pages auto-deploys
+- **Frontend + Worker**: Include `deploy:worker` in your commit message
+
+```bash
+# Deploy only frontend
+git commit -m "Update styles"
+
+# Deploy frontend AND worker (e.g., after updating resume)
+git commit -m "Update resume deploy:worker"
+```
+
+You can also manually trigger worker deployment from **Actions** → **Deploy** → **Run workflow** → Check "Deploy Cloudflare Worker"
 
 ## Updating Your Resume
 
-1. Replace `app/public/resume.pdf` with your updated resume
-2. Update the worker's context:
-   ```bash
-   cd worker
-   npm run update-resume
-   npm run deploy
-   ```
-3. Push changes to trigger frontend redeploy
+Simply replace `app/public/resume.pdf` and push with the `deploy:worker` keyword:
+
+```bash
+# Replace the PDF file
+cp ~/new-resume.pdf app/public/resume.pdf
+
+# Commit with deploy:worker to trigger worker update
+git add app/public/resume.pdf
+git commit -m "Update resume deploy:worker"
+git push
+```
+
+GitHub Actions will automatically:
+1. Deploy the updated frontend (with new PDF download)
+2. Extract text from the new PDF
+3. Deploy the updated worker with new resume context
 
 ## Local Development
 
