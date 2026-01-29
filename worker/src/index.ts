@@ -84,7 +84,7 @@ export default {
       ];
 
       // Call OpenRouter API
-      const model = env.OPENROUTER_MODEL || 'anthropic/claude-3.5-sonnet';
+      const model = env.OPENROUTER_MODEL || 'google/gemini-2.5-flash';
       
       const openRouterResponse = await fetch('https://openrouter.ai/api/v1/chat/completions', {
         method: 'POST',
