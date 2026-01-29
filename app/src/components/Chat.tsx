@@ -121,9 +121,9 @@ export function Chat() {
   };
 
   return (
-    <div className="flex flex-col h-[calc(100vh-180px)] max-h-[700px] w-full max-w-3xl mx-auto">
-      {/* Messages Area */}
-      <ScrollArea ref={scrollAreaRef} className="flex-1 pr-4">
+    <div className="flex flex-col h-full w-full max-w-3xl mx-auto">
+      {/* Messages Area - flex-1 with min-h-0 allows proper scrolling */}
+      <ScrollArea ref={scrollAreaRef} className="flex-1 min-h-0 pr-4">
         <div className="space-y-6 pb-4">
           {messages.map((message) => (
             <div
