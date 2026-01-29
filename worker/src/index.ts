@@ -91,8 +91,8 @@ export default {
         headers: {
           'Authorization': `Bearer ${env.OPENROUTER_API_KEY}`,
           'Content-Type': 'application/json',
-          'HTTP-Referer': 'https://emlsm.tech',
-          'X-Title': 'Emil Ismayilzada Portfolio',
+          'HTTP-Referer': 'https://iamemil.github.io',
+          'X-Title': 'Emil Ismayilzada',
         },
         body: JSON.stringify({
           model,
