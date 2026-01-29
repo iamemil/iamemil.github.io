@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { ChatOpenAI } from "@langchain/openai";
 import { HumanMessage, SystemMessage, AIMessage } from "@langchain/core/messages";
-import { SYSTEM_PROMPT } from "@/lib/resume-context";
+import { getResumeContent, getSystemPrompt } from "@/lib/resume-context";
 
 export async function POST(request: NextRequest) {
   try {
@@ -23,6 +23,10 @@ export async function POST(request: NextRequest) {
       );
     }
 
+    // Get resume content from PDF
+    const resumeContent = await getResumeContent();
+    const systemPrompt = getSystemPrompt(resumeContent);
+
     // Initialize ChatOpenAI with OpenRouter configuration
     const model = new ChatOpenAI({
       modelName: process.env.OPENROUTER_MODEL || "anthropic/claude-3.5-sonnet",
@@ -40,7 +44,7 @@ export async function POST(request: NextRequest) {
 
     // Convert messages to LangChain format
     const langchainMessages = [
-      new SystemMessage(SYSTEM_PROMPT),
+      new SystemMessage(systemPrompt),
       ...messages.map((msg: { role: string; content: string }) => {
         if (msg.role === "user") {
           return new HumanMessage(msg.content);
