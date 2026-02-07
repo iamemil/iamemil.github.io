@@ -74,6 +74,12 @@ export default function RootLayout({
             `,
           }}
         />
+        {/* Cloudflare Web Analytics */}
+        <script
+          defer
+          src="https://static.cloudflareinsights.com/beacon.min.js"
+          data-cf-beacon='{"token": "73300c309c0444d6a84d7f981c590354"}'
+        />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
